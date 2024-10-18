@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Page Info Extractor",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "image.jpg",
+      "48": "image.jpg",
+      "128": "image.jpg"
+    }
+  },
+  "icons": {
+    "16": "image.jpg",
+    "48": "image.jpg",
+    "128": "image.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
