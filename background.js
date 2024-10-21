@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         sendResponse({ status: 'Success', serverResponse: data });
     })
     .catch(error => {
-        console.error('Error:', error);
+        // console.error('Error:', error);
         sendResponse({ status: 'Error', error: error.message });
     });
 
